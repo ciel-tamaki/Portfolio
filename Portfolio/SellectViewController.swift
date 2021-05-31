@@ -11,7 +11,8 @@ class SellectViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl:UISegmentedControl!
     
-    @IBOutlet weak var DisplayLabel: UILabel!
+    @IBOutlet weak var DisplayLabel1: UILabel!
+    @IBOutlet weak var DisplayLabel2: UILabel!
     
     @IBOutlet weak var View1: UIImageView!
     @IBOutlet weak var View2: UIImageView!
@@ -28,24 +29,35 @@ class SellectViewController: UIViewController {
         switch sender.selectedSegmentIndex{
         case 0:
             print("A4横")
-            self.DisplayLabel.text = "A4横"
+            self.DisplayLabel1.text = "A4横1"
+            self.DisplayLabel2.text = "A4横2"
             self.View1.image = UIImage(named: "A4yoko.png")
             self.View2.image = UIImage(named: "A4yoko2.png")
         case 1:
             print("A4縦")
-            self.DisplayLabel.text = "A4縦"
+            self.DisplayLabel1.text = "A4縦"
             self.View1.image = UIImage(named: "A4tate.png")
         default:
             print("選択されたもの：未選択")
-            self.DisplayLabel.text = "未選択"
+            self.DisplayLabel1.text = "未選択"
         }
-        
-        View1.image?.accessibilityIdentifier = "A4tate.png"
-        print(View1.getImageName()!)
 
     }
     
-   
+    @IBOutlet weak var inputField: UITextField!
+    
+    @IBAction func select1(_ sender: Any){
+        self.performSegue(withIdentifier: "select1", sender: nil)
+        View1.image?.accessibilityIdentifier = "A4tate.png"
+        print(View1.getImageName()!)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if segue.identifier == "select1" {
+              let nextVC = segue.destination as? DesignHomeViewController
+              nextVC?.outputValue = self.inputField.text
+          }
+      }
     
     
     /*

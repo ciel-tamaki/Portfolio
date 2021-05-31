@@ -9,7 +9,20 @@ import UIKit
 
 class DesignHomeViewController: UIViewController {
 
-    @IBOutlet weak var sellectedimage :UIImageView!
+    @IBOutlet weak var sellectedImage :UIImageView!
+    @IBOutlet weak var outputLabel: UILabel!
+
+    var str = ""
+    
+       // 1. 遷移先に渡したい値を格納する変数を用意する
+       var outputValue : String?
+    
+       override func viewDidLoad() {
+           super.viewDidLoad()
+           outputLabel.text = outputValue
+       // sellectedImage.image = UIImage(named: outputValue)
+       }
+    
     
     var imagename : String?
     
