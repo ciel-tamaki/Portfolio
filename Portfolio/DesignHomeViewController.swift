@@ -47,7 +47,7 @@ class DesignHomeViewController: UIViewController {
           if segue.identifier == "toEditViewController1" {
               let nextVC = segue.destination as? EditViewController
             nextVC?.outputValue = self.sellectedImage.image
-             // nextVC?.outputValue = self.inputField.text
+            nextVC?.outputTitle = self.inputField.text
           }
       }
     

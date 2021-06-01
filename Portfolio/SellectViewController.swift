@@ -50,12 +50,21 @@ class SellectViewController: UIViewController {
         self.performSegue(withIdentifier: "select1", sender: nil)
     }
     
+    @IBAction func select2(_ sender: Any){
+        self.performSegue(withIdentifier: "select2", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           if segue.identifier == "select1" {
               let nextVC = segue.destination as? DesignHomeViewController
             nextVC?.outputValue = self.View1.image
              // nextVC?.outputValue = self.inputField.text
           }
+        if segue.identifier == "select2" {
+            let nextVC = segue.destination as? DesignHomeViewController
+          nextVC?.outputValue = self.View2.image
+           // nextVC?.outputValue = self.inputField.text
+        }
       }
     
     

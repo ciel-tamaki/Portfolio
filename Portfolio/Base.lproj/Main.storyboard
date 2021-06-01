@@ -20,8 +20,8 @@
                                 <rect key="frame" x="-26" y="96" width="466" height="503"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msD-jT-6dd">
-                                <rect key="frame" x="132" y="712" width="150" height="150"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msD-jT-6dd">
+                                <rect key="frame" x="132" y="742" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Cq0-OR-9qq"/>
                                     <constraint firstAttribute="height" constant="150" id="wZk-gp-QTf"/>
@@ -35,6 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="msD-jT-6dd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2hR-qY-w8Z"/>
                             <constraint firstItem="msD-jT-6dd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="30" id="AbW-1A-Qo0"/>
                         </constraints>
                     </view>
@@ -94,6 +95,7 @@
                                 <rect key="frame" x="31" y="363" width="192" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="select2:" destination="EVy-CQ-yuo" eventType="touchUpInside" id="j4O-tc-CaO"/>
                                     <segue destination="e0l-jZ-VBR" kind="presentation" identifier="select2" modalPresentationStyle="fullScreen" id="Mfl-Go-Hoo"/>
                                 </connections>
                             </button>
@@ -225,7 +227,7 @@
                                     <barButtonItem title="Item" id="Rl7-ig-LXw"/>
                                 </items>
                             </toolbar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="No." translatesAutoresizingMaskIntoConstraints="NO" id="MUz-ez-Ukj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="No." translatesAutoresizingMaskIntoConstraints="NO" id="MUz-ez-Ukj">
                                 <rect key="frame" x="10" y="148" width="394" height="534"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -259,7 +261,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7e-ut-lbS">
-                                <rect key="frame" x="90" y="188" width="106" height="21"/>
+                                <rect key="frame" x="56" y="243" width="106" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -282,7 +284,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Com-Tv-YzW"/>
+        <segue reference="Uhz-zr-0ai"/>
         <segue reference="ddm-x5-njH"/>
     </inferredMetricsTieBreakers>
     <resources>
