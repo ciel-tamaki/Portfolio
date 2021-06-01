@@ -31,12 +31,12 @@ class SellectViewController: UIViewController {
             print("A4横")
             self.DisplayLabel1.text = "A4横1"
             self.DisplayLabel2.text = "A4横2"
-            self.View1.image = UIImage(named: "A4yoko.png")
+            self.View1.image = UIImage(named: "A4yoko.png")!
             self.View2.image = UIImage(named: "A4yoko2.png")
         case 1:
             print("A4縦")
             self.DisplayLabel1.text = "A4縦"
-            self.View1.image = UIImage(named: "A4tate.png")
+            self.View1.image = UIImage(named: "A4tate.png")!
         default:
             print("選択されたもの：未選択")
             self.DisplayLabel1.text = "未選択"
@@ -44,18 +44,19 @@ class SellectViewController: UIViewController {
 
     }
     
-    @IBOutlet weak var inputField: UITextField!
+   // @IBOutlet weak var inputField: UITextField!
     
     @IBAction func select1(_ sender: Any){
         self.performSegue(withIdentifier: "select1", sender: nil)
-        View1.image?.accessibilityIdentifier = "A4tate.png"
-        print(View1.getImageName()!)
+        //View1.image?.accessibilityIdentifier = "A4tate.png"
+       // print(View1.getImageName()!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           if segue.identifier == "select1" {
               let nextVC = segue.destination as? DesignHomeViewController
-              nextVC?.outputValue = self.inputField.text
+            nextVC?.outputValue = self.View1.image
+             // nextVC?.outputValue = self.inputField.text
           }
       }
     

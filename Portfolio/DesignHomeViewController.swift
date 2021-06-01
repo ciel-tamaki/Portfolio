@@ -10,21 +10,38 @@ import UIKit
 class DesignHomeViewController: UIViewController {
 
     @IBOutlet weak var sellectedImage :UIImageView!
-    @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet weak var outputLabel: UIImageView!
 
     var str = ""
     
        // 1. 遷移先に渡したい値を格納する変数を用意する
-       var outputValue : String?
+       var outputValue : UIImage?
     
        override func viewDidLoad() {
            super.viewDidLoad()
-           outputLabel.text = outputValue
+        sellectedImage.image = outputValue
        // sellectedImage.image = UIImage(named: outputValue)
        }
     
     
     var imagename : String?
+    
+    
+    @IBOutlet weak var inputField: UITextField!
+     
+    @IBAction func goEdit (_ sender: Any){
+       self.performSegue(withIdentifier: "fromDHVC1", sender: nil)
+     }
+     
+     //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // if segue.identifier == "fromDHVC1" {
+             //let next = segue.destination as? EditViewController
+           // next?.setTitle = self.inputField.text
+        //  }
+     //}
+    
+    
+    
     
    // override func viewDidLoad() {
       //  super.viewDidLoad()

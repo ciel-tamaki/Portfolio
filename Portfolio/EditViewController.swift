@@ -9,12 +9,20 @@ import UIKit
 
 class EditViewController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    
+    
+    @IBOutlet weak var setTitle: UILabel!
+
+        // 1. 遷移先に渡したい値を格納する変数を用意する
+        var outputTitle : String?
+    
     @IBOutlet var haikeiImageView: UIImageView!
     @IBOutlet var photoImageView1:UIImageView!
     @IBOutlet var photoImageView2:UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTitle.text = outputTitle
 
         // Do any additional setup after loading the view.
     }
