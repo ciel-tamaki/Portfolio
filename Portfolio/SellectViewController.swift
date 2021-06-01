@@ -48,8 +48,6 @@ class SellectViewController: UIViewController {
     
     @IBAction func select1(_ sender: Any){
         self.performSegue(withIdentifier: "select1", sender: nil)
-        //View1.image?.accessibilityIdentifier = "A4tate.png"
-       // print(View1.getImageName()!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

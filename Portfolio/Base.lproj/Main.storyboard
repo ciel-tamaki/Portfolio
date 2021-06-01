@@ -141,7 +141,7 @@
             <objects>
                 <viewController id="e0l-jZ-VBR" customClass="DesignHomeViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kF1-3T-d4W">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7A-wN-ucr">
@@ -179,7 +179,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="goEdit:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="49d-yU-wIj"/>
-                                    <segue destination="weR-1Y-jti" kind="presentation" identifier="fromDHVC1" modalPresentationStyle="fullScreen" id="EoS-gm-cEi"/>
+                                    <segue destination="weR-1Y-jti" kind="presentation" identifier="toEditViewController1" modalPresentationStyle="fullScreen" id="EoS-gm-cEi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -211,7 +211,7 @@
                                     <navigationItem title="Title" id="eCi-AM-CLh">
                                         <barButtonItem key="leftBarButtonItem" title="もどる" id="mE0-G2-wYh">
                                             <connections>
-                                                <segue destination="e0l-jZ-VBR" kind="presentation" id="Uhz-zr-0ai"/>
+                                                <segue destination="e0l-jZ-VBR" kind="presentation" modalPresentationStyle="fullScreen" id="Uhz-zr-0ai"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="保存" id="hLG-WY-JVw"/>
@@ -270,7 +270,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="haikeiImageView" destination="MUz-ez-Ukj" id="TcL-Lx-JTG"/>
+                        <outlet property="editImage" destination="MUz-ez-Ukj" id="aZK-cT-yLD"/>
                         <outlet property="photoImageView1" destination="dwO-KC-MAG" id="PJQ-X3-5PF"/>
                         <outlet property="photoImageView2" destination="Z7z-KV-w1l" id="DGj-8F-b3g"/>
                         <outlet property="setTitle" destination="f7e-ut-lbS" id="bMR-pc-ri6"/>
@@ -282,8 +282,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EoS-gm-cEi"/>
-        <segue reference="Uhz-zr-0ai"/>
+        <segue reference="Com-Tv-YzW"/>
         <segue reference="ddm-x5-njH"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -28,10 +28,7 @@ class DesignHomeViewController: UIViewController {
     
     
     @IBOutlet weak var inputField: UITextField!
-     
-    @IBAction func goEdit (_ sender: Any){
-       self.performSegue(withIdentifier: "fromDHVC1", sender: nil)
-     }
+
      
      //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          // if segue.identifier == "fromDHVC1" {
@@ -40,6 +37,19 @@ class DesignHomeViewController: UIViewController {
         //  }
      //}
     
+    
+    
+    @IBAction func goEdit(_ sender: Any){
+        self.performSegue(withIdentifier: "toEditViewController1", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if segue.identifier == "toEditViewController1" {
+              let nextVC = segue.destination as? EditViewController
+            nextVC?.outputValue = self.sellectedImage.image
+             // nextVC?.outputValue = self.inputField.text
+          }
+      }
     
     
     
