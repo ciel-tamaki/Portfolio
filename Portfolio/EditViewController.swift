@@ -73,6 +73,16 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
         return newImage!
     }
     
+    @IBAction func onTappedUPloadButton(){
+        if editImage.image != nil {
+            editImage.image = drawMaskImage(image: editImage.image!)
+            let activityVC = UIActivityViewController(activityItems: [editImage.image!], applicationActivities: nil)
+            self.present(activityVC, animated: true, completion: nil)
+        }
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 

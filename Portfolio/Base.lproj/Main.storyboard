@@ -16,12 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="homeImage" translatesAutoresizingMaskIntoConstraints="NO" id="66V-y4-tqb">
-                                <rect key="frame" x="-26" y="96" width="466" height="503"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeImage" translatesAutoresizingMaskIntoConstraints="NO" id="66V-y4-tqb">
+                                <rect key="frame" x="5" y="144" width="404" height="511.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="66V-y4-tqb" secondAttribute="height" multiplier="207:262" id="qmi-MD-Y5r"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msD-jT-6dd">
-                                <rect key="frame" x="132" y="742" width="150" height="150"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msD-jT-6dd">
+                                <rect key="frame" x="132" y="712" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Cq0-OR-9qq"/>
                                     <constraint firstAttribute="height" constant="150" id="wZk-gp-QTf"/>
@@ -36,7 +38,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="msD-jT-6dd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2hR-qY-w8Z"/>
-                            <constraint firstItem="msD-jT-6dd" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="30" id="AbW-1A-Qo0"/>
+                            <constraint firstAttribute="trailing" secondItem="66V-y4-tqb" secondAttribute="trailing" constant="5" id="LC8-id-ew7"/>
+                            <constraint firstAttribute="bottom" secondItem="msD-jT-6dd" secondAttribute="bottom" constant="50" id="LLg-cD-tXl"/>
+                            <constraint firstItem="66V-y4-tqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="Mim-61-2M3"/>
+                            <constraint firstItem="66V-y4-tqb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QLV-6o-WKX"/>
+                            <constraint firstItem="66V-y4-tqb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="eeR-p4-isn"/>
+                            <constraint firstItem="66V-y4-tqb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="fi3-Ha-Hdz"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -65,17 +72,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MsW-fc-doK">
-                                <rect key="frame" x="39" y="116" width="336" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="A4横"/>
-                                    <segment title="A4縦"/>
-                                </segments>
-                                <connections>
-                                    <action selector="tappedsegmentChangedWithSender:" destination="EVy-CQ-yuo" eventType="valueChanged" id="F6o-UN-LoE"/>
-                                </connections>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2am-RH-4QN">
                                 <rect key="frame" x="81" y="301" width="92" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -122,6 +118,17 @@
                                     <segue destination="e0l-jZ-VBR" kind="presentation" modalPresentationStyle="fullScreen" id="0nM-iy-EPw"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MsW-fc-doK">
+                                <rect key="frame" x="39" y="125" width="349" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="A4横"/>
+                                    <segment title="A4縦"/>
+                                </segments>
+                                <connections>
+                                    <action selector="tappedsegmentChangedWithSender:" destination="EVy-CQ-yuo" eventType="valueChanged" id="F6o-UN-LoE"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TLI-m3-sDN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -172,18 +179,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kX-Nx-mxq">
-                                <rect key="frame" x="87" y="324" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aD8-ZL-ugv">
-                                <rect key="frame" x="87" y="324" width="240" height="128"/>
+                                <rect key="frame" x="87" y="247" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="goEdit:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="49d-yU-wIj"/>
                                     <segue destination="weR-1Y-jti" kind="presentation" identifier="toEditViewController1" modalPresentationStyle="fullScreen" id="EoS-gm-cEi"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kX-Nx-mxq">
+                                <rect key="frame" x="87" y="247" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N9d-AS-VcJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -216,12 +223,16 @@
                                                 <segue destination="e0l-jZ-VBR" kind="presentation" modalPresentationStyle="fullScreen" id="Uhz-zr-0ai"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="保存" id="hLG-WY-JVw"/>
+                                        <barButtonItem key="rightBarButtonItem" title="保存" id="hLG-WY-JVw">
+                                            <connections>
+                                                <action selector="onTappedUPloadButton" destination="weR-1Y-jti" id="OOg-fY-GRc"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Toc-M6-4eO">
-                                <rect key="frame" x="0.0" y="852" width="414" height="44"/>
+                                <rect key="frame" x="-1" y="852" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Item" id="Rl7-ig-LXw"/>
@@ -239,16 +250,10 @@
                                 <rect key="frame" x="154" y="308" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqC-xd-AHK">
-                                <rect key="frame" x="90" y="217" width="223" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muy-Ki-Swk">
                                 <rect key="frame" x="32" y="469" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="写真２"/>
                                 <connections>
                                     <action selector="onTappedAlbumButton2" destination="weR-1Y-jti" eventType="touchUpOutside" id="a32-XT-GuC"/>
                                 </connections>
@@ -256,12 +261,25 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKL-kd-gAa">
                                 <rect key="frame" x="154" y="308" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="写真１"/>
                                 <connections>
                                     <action selector="onTappedAlbumButton1" destination="weR-1Y-jti" eventType="touchUpInside" id="r19-0h-kWv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIs-jp-zVc">
+                                <rect key="frame" x="116" y="739" width="180" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqC-xd-AHK">
+                                <rect key="frame" x="41" y="243" width="223" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7e-ut-lbS">
-                                <rect key="frame" x="56" y="243" width="106" height="21"/>
+                                <rect key="frame" x="41" y="269" width="106" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -284,8 +302,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Uhz-zr-0ai"/>
-        <segue reference="ddm-x5-njH"/>
+        <segue reference="Com-Tv-YzW"/>
+        <segue reference="2fc-bs-3cR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="No." width="1414" height="2000"/>
