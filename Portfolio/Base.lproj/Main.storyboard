@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,7 +34,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95678216220000001" green="0.95691603420000004" blue="0.95673996210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="msD-jT-6dd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2hR-qY-w8Z"/>
                             <constraint firstAttribute="trailing" secondItem="66V-y4-tqb" secondAttribute="trailing" constant="5" id="LC8-id-ew7"/>
@@ -131,7 +130,7 @@
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TLI-m3-sDN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95678216220000001" green="0.95691603420000004" blue="0.95673996210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="DisplayLabel1" destination="2am-RH-4QN" id="HMC-z3-ZXb"/>
@@ -191,9 +190,18 @@
                                 <rect key="frame" x="87" y="247" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RcN-Nj-Rue">
+                                <rect key="frame" x="87" y="451" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-Wk-ssq">
+                                <rect key="frame" x="87" y="451" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N9d-AS-VcJ"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95678216220000001" green="0.95691603420000004" blue="0.95673996210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="inputField" destination="BUc-u6-4Pl" id="JLx-Rq-ev4"/>
@@ -287,7 +295,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SxM-FQ-bZx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.95678216220000001" green="0.95691603420000004" blue="0.95673996210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <outlet property="editImage" destination="MUz-ez-Ukj" id="aZK-cT-yLD"/>
@@ -302,15 +310,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Com-Tv-YzW"/>
-        <segue reference="2fc-bs-3cR"/>
+        <segue reference="EoS-gm-cEi"/>
+        <segue reference="Uhz-zr-0ai"/>
+        <segue reference="ddm-x5-njH"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="No." width="1414" height="2000"/>
         <image name="homeImage" width="1080" height="1358"/>
         <image name="make" width="453" height="453"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

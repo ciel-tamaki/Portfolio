@@ -11,6 +11,8 @@ class DesignHomeViewController: UIViewController {
 
     @IBOutlet weak var sellectedImage :UIImageView!
     @IBOutlet weak var outputLabel: UIImageView!
+    
+    @IBOutlet weak var Image1 :UIImageView!
 
     var str = ""
     
@@ -21,7 +23,9 @@ class DesignHomeViewController: UIViewController {
            super.viewDidLoad()
         sellectedImage.image = outputValue
        // sellectedImage.image = UIImage(named: outputValue)
+
        }
+    
     
     
     var imagename : String?
