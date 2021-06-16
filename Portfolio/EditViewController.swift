@@ -39,15 +39,19 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
         self.view.addSubview(photoImageView1)
         self.view.addSubview(photoImageView2)
         
-        
     }
+    
+    
+    var number : Int = 0
     
     @IBAction func onTappedAlbumButton1(){
         presentPickerController(sourceType: .photoLibrary)
+        number = 1
     }
     
     @IBAction func onTappedAlbumButton2(){
-        presentPickerController2(sourceType: .photoLibrary)
+        presentPickerController(sourceType: .photoLibrary)
+        number = 2
     }
     
     func presentPickerController(sourceType: UIImagePickerController.SourceType){
@@ -61,30 +65,20 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey: Any]) {
         self.dismiss(animated: true, completion: nil)
+        if number == 1 {
         photoImageView1.image = info[.originalImage]as?UIImage
-    }
-    
-    
-    func presentPickerController2(sourceType: UIImagePickerController.SourceType){
-        if UIImagePickerController.isSourceTypeAvailable(sourceType){
-            let picker = UIImagePickerController()
-            picker.sourceType = sourceType
-            picker.delegate = self
-            self.present(picker, animated: true, completion: nil)
+        }else if number == 2 {
+            photoImageView2.image = info[.originalImage]as?UIImage
         }
     }
     
-    func imagePickerController2(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey: Any]) {
-        self.dismiss(animated: true, completion: nil)
-        photoImageView2.image = info[.originalImage]as?UIImage
-    }
     
 
+    
     @IBAction func pinchImage(_ sender: UIPinchGestureRecognizer) {
         photoImageView1.transform = CGAffineTransform(scaleX:sender.scale, y:sender.scale)
     }
     
-
     @IBAction func onTappedUPloadButton(){
         if editImage.image != nil {
             let activityVC = UIActivityViewController(activityItems: [editImage.image!], applicationActivities: nil)
@@ -92,16 +86,17 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
         }
     }
     
+    var pinchNumber: Int = 0
+  
+    @IBAction func onTappedView1(_ sender: UIPinchGestureRecognizer) {
+        pinchNumber = 1
+    }
     
-    
-    
-    
-    
-       // 画面にタッチで呼ばれる
-       override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-           print("touchesBegan")
-           
-       }
+    @IBAction func onTappedView(_ sender: UITapGestureRecognizer) {
+        pinchNumber = 2
+    }
+    // 画面にタッチで呼ばれる
+       
        
        //　ドラッグ時に呼ばれる
        override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -124,22 +119,18 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
            let dy = newDy - preDy
            print("y:\(dy)")
            
+        
            // 画像のフレーム
            var viewFrame1: CGRect = photoImageView1.frame
-           var viewFrame2: CGRect = photoImageView2.frame
            
            // 移動分を反映させる
            viewFrame1.origin.x += dx
            viewFrame1.origin.y += dy
-        
-        viewFrame2.origin.x += dx
-        viewFrame2.origin.y += dy
            
         photoImageView1.frame = viewFrame1
-        photoImageView2.frame = viewFrame2
            
            self.view.addSubview(photoImageView1)
-           self.view.addSubview(photoImageView2)
+            
         
        }
     
