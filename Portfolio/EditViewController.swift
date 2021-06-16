@@ -27,6 +27,19 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
         editImage.image = outputValue
 
         // Do any additional setup after loading the view.
+        
+        // Screen Size の取得
+        let screenWidth:CGFloat = view.frame.size.width
+        let screenHeight:CGFloat = view.frame.size.height
+        
+        // タッチ操作を enable
+        photoImageView1.isUserInteractionEnabled = true
+        photoImageView2.isUserInteractionEnabled = true
+        
+        self.view.addSubview(photoImageView1)
+        self.view.addSubview(photoImageView2)
+        
+        
     }
     
     @IBAction func onTappedAlbumButton1(){
@@ -34,7 +47,7 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
     }
     
     @IBAction func onTappedAlbumButton2(){
-        presentPickerController(sourceType: .photoLibrary)
+        presentPickerController2(sourceType: .photoLibrary)
     }
     
     func presentPickerController(sourceType: UIImagePickerController.SourceType){
@@ -51,35 +64,91 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
         photoImageView1.image = info[.originalImage]as?UIImage
     }
     
-
-    func drawMaskImage(image: UIImage) -> UIImage {
-        let maskImage = UIImage(named: "photoImageView1")!
-        
-        UIGraphicsBeginImageContext(image.size)
-        
-        image.draw(in: CGRect(x: 0, y:0, width: image.size.width, height: image.size.height))
-        
-        let margin: CGFloat = 50.0
-        let maskRect = CGRect(x: image.size.width - maskImage.size.width - margin,
-                              y: image.size.height - maskImage.size.height - margin,
-                              width: maskImage.size.width, height: maskImage.size.height)
-        
-        maskImage.draw(in: maskRect)
-        
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        
-        UIGraphicsEndImageContext()
-        
-        return newImage!
+    
+    func presentPickerController2(sourceType: UIImagePickerController.SourceType){
+        if UIImagePickerController.isSourceTypeAvailable(sourceType){
+            let picker = UIImagePickerController()
+            picker.sourceType = sourceType
+            picker.delegate = self
+            self.present(picker, animated: true, completion: nil)
+        }
     }
     
+    func imagePickerController2(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey: Any]) {
+        self.dismiss(animated: true, completion: nil)
+        photoImageView2.image = info[.originalImage]as?UIImage
+    }
+    
+
+    @IBAction func pinchImage(_ sender: UIPinchGestureRecognizer) {
+        photoImageView1.transform = CGAffineTransform(scaleX:sender.scale, y:sender.scale)
+    }
+    
+
     @IBAction func onTappedUPloadButton(){
         if editImage.image != nil {
-            editImage.image = drawMaskImage(image: editImage.image!)
             let activityVC = UIActivityViewController(activityItems: [editImage.image!], applicationActivities: nil)
             self.present(activityVC, animated: true, completion: nil)
         }
     }
+    
+    
+    
+    
+    
+    
+       // 画面にタッチで呼ばれる
+       override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           print("touchesBegan")
+           
+       }
+       
+       //　ドラッグ時に呼ばれる
+       override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+           // タッチイベントを取得
+           let touchEvent = touches.first!
+           
+           // ドラッグ前の座標, Swift 1.2 から
+           let preDx = touchEvent.previousLocation(in: self.view).x
+           let preDy = touchEvent.previousLocation(in: self.view).y
+           
+           // ドラッグ後の座標
+           let newDx = touchEvent.location(in: self.view).x
+           let newDy = touchEvent.location(in: self.view).y
+           
+           // ドラッグしたx座標の移動距離
+           let dx = newDx - preDx
+           print("x:\(dx)")
+           
+           // ドラッグしたy座標の移動距離
+           let dy = newDy - preDy
+           print("y:\(dy)")
+           
+           // 画像のフレーム
+           var viewFrame1: CGRect = photoImageView1.frame
+           var viewFrame2: CGRect = photoImageView2.frame
+           
+           // 移動分を反映させる
+           viewFrame1.origin.x += dx
+           viewFrame1.origin.y += dy
+        
+        viewFrame2.origin.x += dx
+        viewFrame2.origin.y += dy
+           
+        photoImageView1.frame = viewFrame1
+        photoImageView2.frame = viewFrame2
+           
+           self.view.addSubview(photoImageView1)
+           self.view.addSubview(photoImageView2)
+        
+       }
+    
+       override func didReceiveMemoryWarning() {
+           super.didReceiveMemoryWarning()
+           // Dispose of any resources that can be recreated.
+       }
+    
+    
     
     
     

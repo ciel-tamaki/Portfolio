@@ -13,15 +13,24 @@ class DesignHomeViewController: UIViewController {
     @IBOutlet weak var outputLabel: UIImageView!
     
     @IBOutlet weak var Image1 :UIImageView!
+    @IBOutlet weak var Image2 :UIImageView!
+    @IBOutlet weak var Image3 :UIImageView!
+    @IBOutlet weak var Image4 :UIImageView!
 
     var str = ""
     
        // 1. 遷移先に渡したい値を格納する変数を用意する
        var outputValue : UIImage?
+       var output : [UIImage]!
     
        override func viewDidLoad() {
            super.viewDidLoad()
         sellectedImage.image = outputValue
+        Image1.image = output[1]
+        Image2.image = output[2]
+        Image3.image = output[3]
+        Image4.image = output[4]
+        
        // sellectedImage.image = UIImage(named: outputValue)
 
        }

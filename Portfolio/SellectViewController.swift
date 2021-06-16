@@ -17,6 +17,7 @@ class SellectViewController: UIViewController {
     @IBOutlet weak var View1: UIImageView!
     @IBOutlet weak var View2: UIImageView!
     
+    var y2: [UIImage]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,15 @@ class SellectViewController: UIViewController {
     }
     
     
+    
     @IBAction func tappedsegmentChanged(sender: UISegmentedControl) {
+        
+        y2 = [UIImage(named:"y21.jpg")!,
+              UIImage(named:"y22.jpg")!,
+              UIImage(named:"y23.jpg")!,
+              UIImage(named:"y24.jpg")!,
+              UIImage(named:"y25.jpg")!,]
+        
         switch sender.selectedSegmentIndex{
         case 0:
             print("A4横")
@@ -35,8 +44,10 @@ class SellectViewController: UIViewController {
             self.View2.image = UIImage(named: "A4yoko2.png")
         case 1:
             print("A4縦")
-            self.DisplayLabel1.text = "A4縦"
+            self.DisplayLabel1.text = "A4縦1"
+            self.DisplayLabel1.text = "A4縦2"
             self.View1.image = UIImage(named: "A4tate.png")!
+            self.View2.image = y2[0]
         default:
             print("選択されたもの：未選択")
             self.DisplayLabel1.text = "未選択"
@@ -63,6 +74,9 @@ class SellectViewController: UIViewController {
         if segue.identifier == "select2" {
             let nextVC = segue.destination as? DesignHomeViewController
           nextVC?.outputValue = self.View2.image
+            
+            let next = segue.destination as? DesignHomeViewController
+          next?.output = y2
            // nextVC?.outputValue = self.inputField.text
         }
       }

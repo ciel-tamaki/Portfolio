@@ -21,8 +21,8 @@
                                     <constraint firstAttribute="width" secondItem="66V-y4-tqb" secondAttribute="height" multiplier="207:262" id="qmi-MD-Y5r"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msD-jT-6dd">
-                                <rect key="frame" x="132" y="712" width="150" height="150"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msD-jT-6dd">
+                                <rect key="frame" x="132" y="696" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Cq0-OR-9qq"/>
                                     <constraint firstAttribute="height" constant="150" id="wZk-gp-QTf"/>
@@ -187,11 +187,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4kX-Nx-mxq">
-                                <rect key="frame" x="87" y="247" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RcN-Nj-Rue">
-                                <rect key="frame" x="87" y="451" width="240" height="128"/>
+                                <rect key="frame" x="87" y="182" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpe-Wk-ssq">
@@ -199,11 +195,31 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fsk-vf-88L">
+                                <rect key="frame" x="87" y="451" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ish-NX-sk2">
+                                <rect key="frame" x="87" y="587" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1cq-DY-DV1">
+                                <rect key="frame" x="87" y="734" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RcN-Nj-Rue">
+                                <rect key="frame" x="87" y="315" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N9d-AS-VcJ"/>
                         <color key="backgroundColor" red="0.95678216220000001" green="0.95691603420000004" blue="0.95673996210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="Image1" destination="RcN-Nj-Rue" id="sF1-Bt-4a9"/>
+                        <outlet property="Image2" destination="Fsk-vf-88L" id="qLo-hR-vae"/>
+                        <outlet property="Image3" destination="Ish-NX-sk2" id="S66-RB-Y6g"/>
+                        <outlet property="Image4" destination="1cq-DY-DV1" id="yYC-o9-iK9"/>
                         <outlet property="inputField" destination="BUc-u6-4Pl" id="JLx-Rq-ev4"/>
                         <outlet property="outputLabel" destination="4kX-Nx-mxq" id="aVj-1h-9pQ"/>
                         <outlet property="sellectedImage" destination="4kX-Nx-mxq" id="HWG-vd-ncX"/>
@@ -255,8 +271,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dwO-KC-MAG">
-                                <rect key="frame" x="154" y="308" width="240" height="128"/>
+                                <rect key="frame" x="134" y="298" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2AK-lU-fVH" appends="YES" id="7wa-zm-l9u"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muy-Ki-Swk">
                                 <rect key="frame" x="32" y="469" width="240" height="128"/>
@@ -264,14 +284,6 @@
                                 <state key="normal" title="写真２"/>
                                 <connections>
                                     <action selector="onTappedAlbumButton2" destination="weR-1Y-jti" eventType="touchUpOutside" id="a32-XT-GuC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKL-kd-gAa">
-                                <rect key="frame" x="154" y="308" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="写真１"/>
-                                <connections>
-                                    <action selector="onTappedAlbumButton1" destination="weR-1Y-jti" eventType="touchUpInside" id="r19-0h-kWv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIs-jp-zVc">
@@ -293,6 +305,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKL-kd-gAa">
+                                <rect key="frame" x="116" y="243" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="写真１"/>
+                                <connections>
+                                    <action selector="onTappedAlbumButton1" destination="weR-1Y-jti" eventType="touchUpInside" id="r19-0h-kWv"/>
+                                    <outletCollection property="gestureRecognizers" destination="2AK-lU-fVH" appends="YES" id="6H0-i6-3gi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SxM-FQ-bZx"/>
                         <color key="backgroundColor" red="0.95678216220000001" green="0.95691603420000004" blue="0.95673996210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -305,12 +327,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cmk-mL-tje" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="2AK-lU-fVH">
+                    <connections>
+                        <action selector="pinchImage:" destination="weR-1Y-jti" id="wpp-fy-f2h"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2369.5652173913045" y="103.79464285714285"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EoS-gm-cEi"/>
         <segue reference="Uhz-zr-0ai"/>
         <segue reference="ddm-x5-njH"/>
     </inferredMetricsTieBreakers>

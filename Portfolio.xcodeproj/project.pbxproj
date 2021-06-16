@@ -10,6 +10,7 @@
 		9329E7D72663152900CC25ED /* SellectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9329E7D62663152900CC25ED /* SellectViewController.swift */; };
 		9329E7DC266315D000CC25ED /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9329E7DB266315D000CC25ED /* EditViewController.swift */; };
 		9329E7E42663C01600CC25ED /* DesignHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9329E7E32663C01600CC25ED /* DesignHomeViewController.swift */; };
+		93885D552679119E005112B5 /* Stamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93885D542679119E005112B5 /* Stamp.swift */; };
 		93F550E12659F8F00003E8D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F550E02659F8F00003E8D5 /* AppDelegate.swift */; };
 		93F550E32659F8F00003E8D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F550E22659F8F00003E8D5 /* SceneDelegate.swift */; };
 		93F550E52659F8F00003E8D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F550E42659F8F00003E8D5 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		9329E7D62663152900CC25ED /* SellectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellectViewController.swift; sourceTree = "<group>"; };
 		9329E7DB266315D000CC25ED /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		9329E7E32663C01600CC25ED /* DesignHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignHomeViewController.swift; sourceTree = "<group>"; };
+		93885D542679119E005112B5 /* Stamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stamp.swift; sourceTree = "<group>"; };
 		93F550DD2659F8F00003E8D5 /* Portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portfolio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F550E02659F8F00003E8D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93F550E22659F8F00003E8D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				93F550E62659F8F00003E8D5 /* Main.storyboard */,
 				9329E7E32663C01600CC25ED /* DesignHomeViewController.swift */,
 				9329E7DB266315D000CC25ED /* EditViewController.swift */,
+				93885D542679119E005112B5 /* Stamp.swift */,
 				9329E7D62663152900CC25ED /* SellectViewController.swift */,
 				93F550E92659F8FD0003E8D5 /* Assets.xcassets */,
 				93F550EB2659F8FD0003E8D5 /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 				93F550E52659F8F00003E8D5 /* ViewController.swift in Sources */,
 				9329E7D72663152900CC25ED /* SellectViewController.swift in Sources */,
 				93F550E12659F8F00003E8D5 /* AppDelegate.swift in Sources */,
+				93885D552679119E005112B5 /* Stamp.swift in Sources */,
 				93F550E32659F8F00003E8D5 /* SceneDelegate.swift in Sources */,
 				9329E7E42663C01600CC25ED /* DesignHomeViewController.swift in Sources */,
 			);
@@ -452,6 +456,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2K446D59RQ;
 				INFOPLIST_FILE = Portfolio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,6 +478,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2K446D59RQ;
 				INFOPLIST_FILE = Portfolio/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
