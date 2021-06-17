@@ -11,7 +11,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Portfolio" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -21,7 +21,7 @@
                                     <constraint firstAttribute="width" secondItem="66V-y4-tqb" secondAttribute="height" multiplier="207:262" id="qmi-MD-Y5r"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msD-jT-6dd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msD-jT-6dd">
                                 <rect key="frame" x="132" y="696" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="Cq0-OR-9qq"/>
@@ -166,13 +166,13 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BUc-u6-4Pl">
-                                <rect key="frame" x="133" y="140" width="261" height="34"/>
+                                <rect key="frame" x="133" y="119" width="261" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="タイトル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxk-1k-hVS">
-                                <rect key="frame" x="33" y="147" width="70" height="27"/>
+                                <rect key="frame" x="35" y="119" width="70" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -211,6 +211,46 @@
                                 <rect key="frame" x="87" y="173" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUW-3d-aR0">
+                                <rect key="frame" x="87" y="173" width="282" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Button1:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="0xt-Ky-joJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTt-WW-kG9">
+                                <rect key="frame" x="87" y="315" width="282" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Button2:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="iZa-C4-9m7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOY-or-VZ4">
+                                <rect key="frame" x="87" y="451" width="282" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Button3:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="muh-cx-xxT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEa-5V-nSw">
+                                <rect key="frame" x="87" y="587" width="282" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Button4:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="OlZ-u5-iJm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmS-oh-59G">
+                                <rect key="frame" x="87" y="734" width="282" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Button5:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="D4Q-BB-mES"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N9d-AS-VcJ"/>
                         <color key="backgroundColor" red="0.95678216220000001" green="0.95691603420000004" blue="0.95673996210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -249,7 +289,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="保存" id="hLG-WY-JVw">
                                             <connections>
-                                                <action selector="onTappedUPloadButton" destination="weR-1Y-jti" id="OOg-fY-GRc"/>
+                                                <action selector="onClickMyButtonWithSender:" destination="weR-1Y-jti" id="45H-m0-GLa"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -297,22 +337,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKL-kd-gAa">
-                                <rect key="frame" x="211" y="699" width="163" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <state key="normal" title="写真１"/>
-                                <connections>
-                                    <action selector="onTappedAlbumButton1" destination="weR-1Y-jti" eventType="touchUpInside" id="r19-0h-kWv"/>
-                                    <outletCollection property="gestureRecognizers" destination="2AK-lU-fVH" appends="YES" id="6H0-i6-3gi"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muy-Ki-Swk">
                                 <rect key="frame" x="32" y="710" width="137" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="写真２"/>
                                 <connections>
                                     <action selector="onTappedAlbumButton2" destination="weR-1Y-jti" eventType="touchUpInside" id="zQN-bz-Iek"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKL-kd-gAa">
+                                <rect key="frame" x="211" y="710" width="163" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="写真１"/>
+                                <connections>
+                                    <action selector="onTappedAlbumButton1" destination="weR-1Y-jti" eventType="touchUpInside" id="r19-0h-kWv"/>
+                                    <outletCollection property="gestureRecognizers" destination="2AK-lU-fVH" appends="YES" id="6H0-i6-3gi"/>
                                 </connections>
                             </button>
                         </subviews>

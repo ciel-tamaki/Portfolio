@@ -51,21 +51,65 @@ class DesignHomeViewController: UIViewController {
      //}
     
     
+    var number: Int = 0
     
-    @IBAction func goEdit(_ sender: Any){
+   
+    
+    @IBAction func Button1(_ sender: Any){
+        number = 1
         self.performSegue(withIdentifier: "toEditViewController1", sender: nil)
+        print(number)
     }
+    
+    @IBAction func Button2(_ sender: UIButton) {
+        number = 2
+        self.performSegue(withIdentifier: "toEditViewController1", sender: nil)
+        print(number)
+    }
+    
+    @IBAction func Button3(_ sender: Any){
+        number = 3
+        self.performSegue(withIdentifier: "toEditViewController1", sender: nil)
+        print(number)
+    }
+    
+    @IBAction func Button4(_ sender: Any){
+        number = 4
+        self.performSegue(withIdentifier: "toEditViewController1", sender: nil)
+        print(number)
+    }
+    
+    @IBAction func Button5(_ sender: Any){
+        number = 5
+        self.performSegue(withIdentifier: "toEditViewController1", sender: nil)
+        print(number)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           if segue.identifier == "toEditViewController1" {
               let nextVC = segue.destination as? EditViewController
+            
+            if number == 1{
             nextVC?.outputValue = self.sellectedImage.image
             nextVC?.outputTitle = self.inputField.text
+            }else if number == 2{
+                nextVC?.outputValue = self.Image1.image
+            }else if number == 3{
+                nextVC?.outputValue = self.Image2.image
+            }else if number == 4{
+                nextVC?.outputValue = self.Image3.image
+            }else if number == 5{
+                nextVC?.outputValue = self.Image4.image
+            }
+            
           }
+        
       }
     
     
     
+   
    // override func viewDidLoad() {
       //  super.viewDidLoad()
     //    imagename.text = outputValue
@@ -85,3 +129,5 @@ class DesignHomeViewController: UIViewController {
     */
 
 }
+
+

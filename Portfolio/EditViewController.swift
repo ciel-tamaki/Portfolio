@@ -152,5 +152,45 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    
+    var myImageView: UIImageView!
+    
+    @IBAction func onClickMyButton() {
+            // キャプチャ画像を取得.
+            let myImage = photoImageView1.GetImage() as UIImage
 
+            // ImageViewのimageにセット.
+        myImageView.image = myImage
+
+            // 縦横比率を保ちつつ画像をUIImageViewの大きさに合わせる.
+            
+        myImageView.contentMode = UIView.ContentMode.scaleAspectFit
+        }
+    
+}
+
+extension UIView {
+
+    func GetImage() -> UIImage{
+
+        // キャプチャする範囲を取得.
+        let rect = self.bounds
+
+        // ビットマップ画像のcontextを作成.
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+
+        // 対象のview内の描画をcontextに複写する.
+        self.layer.render(in: context)
+
+        // 現在のcontextのビットマップをUIImageとして取得.
+        let capturedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+
+        // contextを閉じる.
+        UIGraphicsEndImageContext()
+
+        return capturedImage
+    }
 }
