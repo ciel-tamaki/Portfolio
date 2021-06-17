@@ -343,6 +343,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="EoS-gm-cEi"/>
         <segue reference="Uhz-zr-0ai"/>
         <segue reference="ddm-x5-njH"/>
     </inferredMetricsTieBreakers>
