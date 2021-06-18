@@ -169,37 +169,35 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
     */
     
     
+
     
-    var myImageView: UIImageView!
-    
-    var resultImageView: UIImageView!
+   @IBOutlet var targetView: UIView!
+   @IBOutlet  var resultImageView: UIImageView!
     
     @IBAction func takeScreenshot() {
-           let result = editImage.takeScreenshot()
+        let result = targetView.takeScreenshot()
            resultImageView.image = result
        }
    }
 
-
 extension UIView {
 
-    func takeScreenshot() -> UIImage{
+    func takeScreenshot() -> UIImage {
 
-        // キャプチャする範囲を取得.
-        let rect = self.bounds
+        // Begin context
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
 
         // Draw view in that context
-               drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        drawHierarchy(in: self.bounds, afterScreenUpdates: true)
 
-               // And finally, get image
-               let image = UIGraphicsGetImageFromCurrentImageContext()
-               UIGraphicsEndImageContext()
+        // And finally, get image
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
 
-               if (image != nil)
-               {
-                   return image!
-               }
-               return UIImage()
-
+        if (image != nil)
+        {
+            return image!
+        }
+        return UIImage()
     }
 }
