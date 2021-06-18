@@ -12,10 +12,12 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
     
     @IBOutlet weak var editImage: UIImageView!
     @IBOutlet weak var setTitle: UILabel!
-
+    var sellectImageSet : [UIImage]!
         // 1. 遷移先に渡したい値を格納する変数を用意する
         var outputValue : UIImage?
         var outputTitle : String?
+         var imageSet : [UIImage]!
+       
     
   //  @IBOutlet var haikeiImageView: UIImageView!
     @IBOutlet var photoImageView1:UIImageView!
@@ -25,6 +27,7 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
         super.viewDidLoad()
         setTitle.text = outputTitle
         editImage.image = outputValue
+        sellectImageSet = imageSet
 
         // Do any additional setup after loading the view.
         
@@ -138,7 +141,19 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
            super.didReceiveMemoryWarning()
            // Dispose of any resources that can be recreated.
        }
+
     
+    //戻るボタン
+    @IBAction func Back(_ sender: Any){
+        self.performSegue(withIdentifier: "toDesignHomeViewController", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if segue.identifier == "toDesignHomeViewController" {
+            let next = segue.destination as? DesignHomeViewController
+              next?.output = sellectImageSet
+        }
+      }
     
     
     
@@ -157,40 +172,34 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
     
     var myImageView: UIImageView!
     
-    @IBAction func onClickMyButton() {
-            // キャプチャ画像を取得.
-            let myImage = photoImageView1.GetImage() as UIImage
-
-            // ImageViewのimageにセット.
-        myImageView.image = myImage
-
-            // 縦横比率を保ちつつ画像をUIImageViewの大きさに合わせる.
-            
-        myImageView.contentMode = UIView.ContentMode.scaleAspectFit
-        }
+    var resultImageView: UIImageView!
     
-}
+    @IBAction func takeScreenshot() {
+           let result = editImage.takeScreenshot()
+           resultImageView.image = result
+       }
+   }
+
 
 extension UIView {
 
-    func GetImage() -> UIImage{
+    func takeScreenshot() -> UIImage{
 
         // キャプチャする範囲を取得.
         let rect = self.bounds
 
-        // ビットマップ画像のcontextを作成.
-        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
-        let context: CGContext = UIGraphicsGetCurrentContext()!
+        // Draw view in that context
+               drawHierarchy(in: self.bounds, afterScreenUpdates: true)
 
-        // 対象のview内の描画をcontextに複写する.
-        self.layer.render(in: context)
+               // And finally, get image
+               let image = UIGraphicsGetImageFromCurrentImageContext()
+               UIGraphicsEndImageContext()
 
-        // 現在のcontextのビットマップをUIImageとして取得.
-        let capturedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+               if (image != nil)
+               {
+                   return image!
+               }
+               return UIImage()
 
-        // contextを閉じる.
-        UIGraphicsEndImageContext()
-
-        return capturedImage
     }
 }

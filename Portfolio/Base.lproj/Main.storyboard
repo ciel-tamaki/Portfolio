@@ -109,14 +109,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4J-hB-135">
-                                <rect key="frame" x="185" y="797" width="56" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="決定"/>
-                                <connections>
-                                    <segue destination="e0l-jZ-VBR" kind="presentation" modalPresentationStyle="fullScreen" id="0nM-iy-EPw"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MsW-fc-doK">
                                 <rect key="frame" x="39" y="125" width="349" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -214,7 +206,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUW-3d-aR0">
                                 <rect key="frame" x="87" y="173" width="282" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="Button1:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="0xt-Ky-joJ"/>
                                 </connections>
@@ -222,7 +213,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTt-WW-kG9">
                                 <rect key="frame" x="87" y="315" width="282" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="Button2:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="iZa-C4-9m7"/>
                                 </connections>
@@ -230,7 +220,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOY-or-VZ4">
                                 <rect key="frame" x="87" y="451" width="282" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="Button3:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="muh-cx-xxT"/>
                                 </connections>
@@ -238,7 +227,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEa-5V-nSw">
                                 <rect key="frame" x="87" y="587" width="282" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="Button4:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="OlZ-u5-iJm"/>
                                 </connections>
@@ -246,7 +234,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmS-oh-59G">
                                 <rect key="frame" x="87" y="734" width="282" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="Button5:" destination="e0l-jZ-VBR" eventType="touchUpInside" id="D4Q-BB-mES"/>
                                 </connections>
@@ -284,24 +271,23 @@
                                     <navigationItem title="Title" id="eCi-AM-CLh">
                                         <barButtonItem key="leftBarButtonItem" title="もどる" id="mE0-G2-wYh">
                                             <connections>
-                                                <segue destination="e0l-jZ-VBR" kind="presentation" modalPresentationStyle="fullScreen" id="Uhz-zr-0ai"/>
+                                                <action selector="Back:" destination="weR-1Y-jti" id="tiN-cO-Dja"/>
+                                                <segue destination="e0l-jZ-VBR" kind="presentation" identifier="toDesignHomeViewController" modalPresentationStyle="fullScreen" id="Uhz-zr-0ai"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="保存" id="hLG-WY-JVw">
-                                            <connections>
-                                                <action selector="onClickMyButtonWithSender:" destination="weR-1Y-jti" id="45H-m0-GLa"/>
-                                            </connections>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" id="OqO-hX-XcW">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="wNJ-NH-I8C">
+                                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="takeScreenshot" destination="weR-1Y-jti" eventType="touchUpInside" id="2r2-K4-tYv"/>
+                                                </connections>
+                                            </button>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Toc-M6-4eO">
-                                <rect key="frame" x="-1" y="852" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Item" id="Rl7-ig-LXw"/>
-                                </items>
-                            </toolbar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="No." translatesAutoresizingMaskIntoConstraints="NO" id="MUz-ez-Ukj">
                                 <rect key="frame" x="10" y="148" width="394" height="534"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -337,19 +323,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muy-Ki-Swk">
-                                <rect key="frame" x="32" y="710" width="137" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="写真２"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muy-Ki-Swk">
+                                <rect key="frame" x="168.5" y="752" width="77" height="30"/>
+                                <state key="normal" title="写真２追加"/>
                                 <connections>
                                     <action selector="onTappedAlbumButton2" destination="weR-1Y-jti" eventType="touchUpInside" id="zQN-bz-Iek"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKL-kd-gAa">
-                                <rect key="frame" x="211" y="710" width="163" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKL-kd-gAa">
+                                <rect key="frame" x="168.5" y="712" width="77" height="30"/>
                                 <gestureRecognizers/>
-                                <state key="normal" title="写真１"/>
+                                <state key="normal" title="写真１追加"/>
                                 <connections>
                                     <action selector="onTappedAlbumButton1" destination="weR-1Y-jti" eventType="touchUpInside" id="r19-0h-kWv"/>
                                     <outletCollection property="gestureRecognizers" destination="2AK-lU-fVH" appends="YES" id="6H0-i6-3gi"/>
@@ -358,6 +342,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SxM-FQ-bZx"/>
                         <color key="backgroundColor" red="0.95678216220000001" green="0.95691603420000004" blue="0.95673996210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SxM-FQ-bZx" firstAttribute="bottom" secondItem="BKL-kd-gAa" secondAttribute="bottom" constant="120" id="0YM-eX-7ch"/>
+                            <constraint firstItem="Muy-Ki-Swk" firstAttribute="centerX" secondItem="Och-bZ-zZI" secondAttribute="centerX" id="BEK-HT-Zhu"/>
+                            <constraint firstItem="SxM-FQ-bZx" firstAttribute="bottom" secondItem="Muy-Ki-Swk" secondAttribute="bottom" constant="80" id="Gx8-Y9-ZKB"/>
+                            <constraint firstItem="BKL-kd-gAa" firstAttribute="centerX" secondItem="Och-bZ-zZI" secondAttribute="centerX" id="q43-IE-nhf"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="editImage" destination="MUz-ez-Ukj" id="aZK-cT-yLD"/>
@@ -383,7 +373,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EoS-gm-cEi"/>
         <segue reference="Uhz-zr-0ai"/>
         <segue reference="ddm-x5-njH"/>
     </inferredMetricsTieBreakers>

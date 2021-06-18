@@ -11,12 +11,13 @@ class DesignHomeViewController: UIViewController {
 
     @IBOutlet weak var sellectedImage :UIImageView!
     @IBOutlet weak var outputLabel: UIImageView!
-    
+ 
     @IBOutlet weak var Image1 :UIImageView!
     @IBOutlet weak var Image2 :UIImageView!
     @IBOutlet weak var Image3 :UIImageView!
     @IBOutlet weak var Image4 :UIImageView!
 
+    var sellectedImageSet : [UIImage]!
     var str = ""
     
        // 1. 遷移先に渡したい値を格納する変数を用意する
@@ -25,7 +26,8 @@ class DesignHomeViewController: UIViewController {
     
        override func viewDidLoad() {
            super.viewDidLoad()
-        sellectedImage.image = outputValue
+        sellectedImage.image = output[0]
+        sellectedImageSet = output
         Image1.image = output[1]
         Image2.image = output[2]
         Image3.image = output[3]
@@ -93,14 +95,19 @@ class DesignHomeViewController: UIViewController {
             if number == 1{
             nextVC?.outputValue = self.sellectedImage.image
             nextVC?.outputTitle = self.inputField.text
+            nextVC?.imageSet = self.sellectedImageSet
             }else if number == 2{
                 nextVC?.outputValue = self.Image1.image
+                nextVC?.imageSet = self.sellectedImageSet
             }else if number == 3{
                 nextVC?.outputValue = self.Image2.image
+                nextVC?.imageSet = self.sellectedImageSet
             }else if number == 4{
                 nextVC?.outputValue = self.Image3.image
+                nextVC?.imageSet = self.sellectedImageSet
             }else if number == 5{
                 nextVC?.outputValue = self.Image4.image
+                nextVC?.imageSet = self.sellectedImageSet
             }
             
           }
