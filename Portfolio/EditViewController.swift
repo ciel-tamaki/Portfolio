@@ -39,8 +39,6 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
         photoImageView1.isUserInteractionEnabled = true
         photoImageView2.isUserInteractionEnabled = true
         
-        self.view.addSubview(photoImageView1)
-        self.view.addSubview(photoImageView2)
         
     }
     
@@ -102,40 +100,40 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
        
        
        //　ドラッグ時に呼ばれる
-       override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+      // override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
            // タッチイベントを取得
-           let touchEvent = touches.first!
+        //   let touchEvent = touches.first!
            
            // ドラッグ前の座標, Swift 1.2 から
-           let preDx = touchEvent.previousLocation(in: self.view).x
-           let preDy = touchEvent.previousLocation(in: self.view).y
+          // let preDx = touchEvent.previousLocation(in: self.view).x
+           //let preDy = touchEvent.previousLocation(in: self.view).y
            
            // ドラッグ後の座標
-           let newDx = touchEvent.location(in: self.view).x
-           let newDy = touchEvent.location(in: self.view).y
+           //let newDx = touchEvent.location(in: self.view).x
+           //let newDy = touchEvent.location(in: self.view).y
            
            // ドラッグしたx座標の移動距離
-           let dx = newDx - preDx
-           print("x:\(dx)")
+           //let dx = newDx - preDx
+           //print("x:\(dx)")
            
            // ドラッグしたy座標の移動距離
-           let dy = newDy - preDy
-           print("y:\(dy)")
+           //let dy = newDy - preDy
+          // print("y:\(dy)")
            
         
            // 画像のフレーム
-           var viewFrame1: CGRect = photoImageView1.frame
+           //var viewFrame1: CGRect = photoImageView1.frame
            
            // 移動分を反映させる
-           viewFrame1.origin.x += dx
-           viewFrame1.origin.y += dy
+           //viewFrame1.origin.x += dx
+          // viewFrame1.origin.y += dy
            
-        photoImageView1.frame = viewFrame1
+     //   photoImageView1.frame = viewFrame1
            
-           self.view.addSubview(photoImageView1)
+        
             
         
-       }
+       //}
     
        override func didReceiveMemoryWarning() {
            super.didReceiveMemoryWarning()
@@ -177,6 +175,13 @@ class EditViewController: UIViewController,UINavigationControllerDelegate, UIIma
     @IBAction func takeScreenshot() {
         let result = targetView.takeScreenshot()
            resultImageView.image = result
+        
+        if resultImageView.image != nil{
+            let activityVC = UIActivityViewController(activityItems: [resultImageView.image], applicationActivities: nil)
+            self.present(activityVC, animated: true, completion: nil)
+        }else {
+            print("画像がありません")
+        }
        }
    }
 
